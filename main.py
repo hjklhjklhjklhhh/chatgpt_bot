@@ -13,9 +13,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-
-bot = Bot(token=BOT_TOKEN)
+bot = Bot(token=os.getenv("BOT_TOKEN"))
 dp = Dispatcher()
 openai_client = OpenAI()
 
