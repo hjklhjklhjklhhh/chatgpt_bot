@@ -21,13 +21,19 @@ chatting = False
 
 @dp.message(CommandStart())
 async def handle_start(message: types.Message):
-    await message.answer("use '/chatgpt' and say anything to talk to ChatGPT.")
+    await message.answer("use '/chatgpt' and say anything to talk to ChatGPT, use '/quit' to stop.")
 
 @dp.message(Command("chatgpt"))
 async def handle_chatgpt(message: types.Message):
     global chatting
     chatting = True
     await message.answer("send anything to chat with ChatGPT.")
+
+@dp.message(Command("quit"))
+async def handle_chatgpt(message: types.Message):
+    global chatting
+    chatting = False
+    await message.answer("stopped chatting with ChatGPT.")
 
 @dp.message(F.text)
 async def handle_message(message: types.Message):
