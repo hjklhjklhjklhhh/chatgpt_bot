@@ -30,7 +30,7 @@ async def handle_chatgpt(message: types.Message):
     await message.answer("send anything to chat with ChatGPT.")
 
 @dp.message(Command("quit"))
-async def handle_chatgpt(message: types.Message):
+async def handle_quit(message: types.Message):
     global chatting
     chatting = False
     await message.answer("stopped chatting with ChatGPT.")
